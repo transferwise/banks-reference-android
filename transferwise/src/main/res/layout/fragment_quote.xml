@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.transferwise.banks.InternationalTransferActivity"
+    >
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/quote_title"
+        tools:viewBindingIgnore="true"
+        />
+
+    <View
+        android:id="@+id/source_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/spacing_l"
+        android:layout_marginTop="@dimen/spacing_l"
+        android:layout_marginEnd="@dimen/spacing_l"
+        android:background="@drawable/background_box"
+        app:layout_constraintBottom_toBottomOf="@id/source_amount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:viewBindingIgnore="true"
+        />
+
+    <TextView
+        android:id="@+id/source_title"
+        style="@style/BanksText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_m"
+        android:layout_marginTop="@dimen/spacing_s"
+        android:text="@string/quote_yousend"
+        app:layout_constraintStart_toStartOf="@+id/source_background"
+        app:layout_constraintTop_toTopOf="@+id/source_background"
+        tools:viewBindingIgnore="true"
+        />
+
+    <ImageView
+        android:id="@+id/source_flag"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/source_currency"
+        app:layout_constraintEnd_toStartOf="@+id/source_currency"
+        app:layout_constraintStart_toStartOf="@+id/target_flag"
+        app:layout_constraintTop_toTopOf="@+id/source_currency"
+        tools:src="@sample/gbp"
+        />
+
+    <TextView
+        android:id="@+id/source_currency"
+        style="@style/BanksTextLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/spacing_m"
+        app:layout_constraintBottom_toBottomOf="@+id/source_background"
+        app:layout_constraintStart_toEndOf="@+id/source_flag"
+        app:layout_constraintTop_toTopOf="@+id/source_background"
+        tools:text="GBP"
+        />
+
+    <com.transferwise.dynamicform.view.SingleTextWatcherEditText
+        android:id="@+id/source_amount"
+        style="@style/BanksTextExtraLarge"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_m"
+        android:background="@null"
+        android:inputType="numberDecimal"
+        android:maxLines="1"
+        android:paddingBottom="@dimen/spacing_s"
+        android:saveEnabled="false"
+        app:layout_constraintEnd_toStartOf="@+id/source_flag"
+        app:layout_constraintStart_toStartOf="@id/source_title"
+        app:layout_constraintTop_toBottomOf="@id/source_title"
+        tools:text="50.00"
+        />
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="?colorOnBackground"
+        app:layout_constraintBottom_toTopOf="@+id/target_background"
+        app:layout_constraintStart_toStartOf="@+id/source_amount"
+        app:layout_constraintTop_toBottomOf="@+id/source_background"
+        tools:viewBindingIngore="true"
+        />
+
+    <ImageView
+        android:id="@+id/fee_icon"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="@dimen/spacing_m"
+        android:background="@drawable/background_circle"
+        android:backgroundTint="?colorOnBackground"
+        android:padding="1dp"
+        android:src="@drawable/quote_minus"
+        android:tint="?android:colorBackground"
+        app:layout_constraintEnd_toEndOf="@+id/line"
+        app:layout_constraintStart_toStartOf="@+id/line"
+        app:layout_constraintTop_toBottomOf="@+id/source_background"
+        tools:viewBindingIgnore="true"
+        />
+
+    <TextView
+        android:id="@+id/fee"
+        style="@style/BanksTextSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_m"
+        android:saveEnabled="false"
+        android:text="@string/quote_unknown_fee"
+        app:layout_constraintBottom_toBottomOf="@+id/fee_icon"
+        app:layout_constraintStart_toEndOf="@+id/line"
+        app:layout_constraintTop_toTopOf="@+id/fee_icon"
+        tools:text="0.70 GBP fee"
+        />
+
+    <ImageView
+        android:id="@+id/rate_icon"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="@dimen/spacing_m"
+        android:background="@drawable/background_circle"
+        android:backgroundTint="?colorOnBackground"
+        android:padding="1dp"
+        android:src="@drawable/quote_times"
+        android:tint="?android:colorBackground"
+        app:layout_constraintEnd_toEndOf="@+id/line"
+        app:layout_constraintStart_toStartOf="@+id/line"
+        app:layout_constraintTop_toBottomOf="@+id/fee_icon"
+        app:layout_goneMarginTop="@dimen/spacing_m"
+        tools:viewBindingIgnore="true"
+        />
+
+    <TextView
+        android:id="@+id/rate"
+        style="@style/BanksTextSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_m"
+        android:saveEnabled="false"
+        android:text="@string/quote_unknown_rate"
+        app:layout_constraintBottom_toBottomOf="@+id/rate_icon"
+        app:layout_constraintStart_toEndOf="@+id/line"
+        app:layout_constraintTop_toTopOf="@+id/rate_icon"
+        tools:text="0.8734 guaranteed exchange rate"
+        />
+
+    <View
+        android:id="@+id/target_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/spacing_m"
+        android:background="@drawable/background_box"
+        app:layout_constraintBottom_toBottomOf="@id/target_amount"
+        app:layout_constraintEnd_toEndOf="@+id/source_background"
+        app:layout_constraintStart_toStartOf="@+id/source_background"
+        app:layout_constraintTop_toBottomOf="@+id/rate_icon"
+        tools:viewBindingIgnore="true"
+        />
+
+    <TextView
+        android:id="@+id/target_title"
+        style="@style/BanksText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_m"
+        android:layout_marginTop="@dimen/spacing_s"
+        android:text="@string/quote_recipientgets"
+        app:layout_constraintStart_toStartOf="@+id/target_background"
+        app:layout_constraintTop_toTopOf="@+id/target_background"
+        tools:viewBindingIgnore="true"
+        />
+
+
+    <com.transferwise.dynamicform.view.SingleTextWatcherEditText
+        android:id="@+id/target_amount"
+        style="@style/BanksTextExtraLarge"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_m"
+        android:background="@null"
+        android:inputType="numberDecimal"
+        android:maxLines="1"
+        android:paddingBottom="@dimen/spacing_s"
+        android:saveEnabled="false"
+        app:layout_constraintEnd_toStartOf="@+id/target_flag"
+        app:layout_constraintStart_toStartOf="@id/target_title"
+        app:layout_constraintTop_toBottomOf="@id/target_title"
+        tools:text="55.64"
+        />
+
+    <ImageView
+        android:id="@+id/target_flag"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/target_currency"
+        app:layout_constraintEnd_toStartOf="@+id/target_currency"
+        app:layout_constraintTop_toTopOf="@+id/target_currency"
+        tools:src="@sample/eur"
+        />
+
+    <TextView
+        android:id="@+id/target_currency"
+        style="@style/BanksTextLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?android:selectableItemBackground"
+        android:paddingStart="@dimen/spacing_m"
+        android:paddingTop="@dimen/spacing_m"
+        android:paddingEnd="@dimen/spacing_xxl"
+        android:paddingBottom="@dimen/spacing_m"
+        app:layout_constraintBottom_toBottomOf="@+id/target_background"
+        app:layout_constraintEnd_toEndOf="@+id/target_background"
+        app:layout_constraintTop_toTopOf="@+id/target_background"
+        tools:text="EUR"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_m"
+        android:src="@drawable/quote_select_currency"
+        app:layout_constraintBottom_toBottomOf="@+id/target_background"
+        app:layout_constraintEnd_toEndOf="@+id/target_currency"
+        app:layout_constraintTop_toTopOf="@+id/target_background"
+        tools:viewBindingIgnore="true"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/button_continue"
+        app:layout_constraintEnd_toEndOf="@+id/button_continue"
+        app:layout_constraintStart_toStartOf="@+id/button_continue"
+        app:srcCompat="@drawable/powered_by_transferwise"
+        tools:viewBindingIgnore="true"
+        />
+
+    <TextView
+        android:id="@+id/arrival_time"
+        style="@style/BanksTextSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_m"
+        android:saveEnabled="false"
+        app:layout_constraintStart_toStartOf="@+id/target_background"
+        app:layout_constraintTop_toBottomOf="@+id/target_background"
+        tools:text="Should arrive in 5 hours"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_continue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_m"
+        android:enabled="false"
+        android:text="@string/quote_continue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:enabled="true"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

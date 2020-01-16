@@ -1,0 +1,14 @@
+# Android Studio
+*.iml
+.gradle
+/local.properties
+.idea
+
+# MacOS
+.DS_Store
+
+# Build intermediates
+build
+/captures
+.externalNativeBuild
+.cxx

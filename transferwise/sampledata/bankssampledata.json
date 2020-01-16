@@ -1,0 +1,100 @@
+{
+  "comment": "Currency data",
+  "currencies": [
+    {
+      "name": "Brazilian real",
+      "code": "BRL",
+      "flag": "@sample/brl"
+    },
+    {
+      "name": "British pound",
+      "code": "GBP",
+      "flag": "@sample/gbp"
+    },
+    {
+      "name": "Canadian dollar",
+      "code": "CAD",
+      "flag": "@sample/cad"
+    },
+    {
+      "name": "Euro",
+      "code": "EUR",
+      "flag": "@sample/eur"
+    },
+    {
+      "name": "Swiss franc",
+      "code": "CHF",
+      "flag": "@sample/chf"
+    },
+    {
+      "name": "Czech rebublic koruna",
+      "code": "CZK",
+      "flag": "@sample/czk"
+    },
+    {
+      "name": "Danish krone",
+      "code": "DKK",
+      "flag": "@sample/dkk"
+    },
+    {
+      "name": "Hong Kong dollar",
+      "code": "HKD",
+      "flag": "@sample/hkd"
+    },
+    {
+      "name": "United States dollar",
+      "code": "USD",
+      "flag": "@sample/usd"
+    }
+  ],
+  "recipients": [
+    {
+      "name": "Adan Blair",
+      "initial": "AD",
+      "color": "#ffa1ac",
+      "accountSummary": "NL29 INGB 7673 6570 82"
+    },
+    {
+      "name": "Ade Lee",
+      "initial": "AL",
+      "color": "#8ad5ae",
+      "accountSummary": "BE12 9788 3336 2792"
+    },
+    {
+      "name": "Adrian Livingston",
+      "initial": "AL",
+      "color": "#bbbcfc",
+      "accountSummary": "FI94 5625 7499 4861 47"
+    },
+    {
+      "name": "Alan Macandrew",
+      "initial": "AM",
+      "color": "#f9c47e",
+      "accountSummary": "CY18 7842 8614 1385 3266 2968 8219"
+    },
+    {
+      "name": "April Rimmington",
+      "initial": "AR",
+      "color": "#f8dc93",
+      "accountSummary": "AD095 85433 2998 6851 7191 95"
+    },
+    {
+      "name": "Julia Wong",
+      "initial": "JW",
+      "color": "#d9dde6",
+      "accountSummary": "GR78 0141 5261 7495 4485 3464 764"
+    },
+    {
+      "name": "Sarah Toon",
+      "initial": "ST",
+      "color": "#89d5ae",
+      "accountSummary": "IS75 3127 4367 1549 4445 6322 14"
+    },
+    {
+      "name": "Will Davies",
+      "initial": "WD",
+      "color": "#98d0f5",
+      "accountSummary": "GB09 BARC2 0040 4133 9974 8"
+    }
+  ]
+}

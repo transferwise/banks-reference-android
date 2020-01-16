@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DynamicFormTheme">
+        <attr name="dynamicFormText" format="reference" />
+        <attr name="dynamicFormSelect" format="reference" />
+        <attr name="dynamicFormTab" format="reference" />
+    </declare-styleable>
+</resources>

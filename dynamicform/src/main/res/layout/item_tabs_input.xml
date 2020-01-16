@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.tabs.TabLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tablayout"
+    style="?dynamicFormTab"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/spacing_m"
+    android:paddingTop="@dimen/spacing_m"
+    android:paddingEnd="@dimen/spacing_m"
+    >
+
+    <com.google.android.material.tabs.TabItem
+        visibility="gone"
+        tools:text="Iban"
+        tools:visibility="visible"
+        />
+
+    <com.google.android.material.tabs.TabItem
+        visibility="gone"
+        tools:text="local bank account"
+        tools:visibility="visible"
+        />
+
+    <com.google.android.material.tabs.TabItem
+        visibility="gone"
+        tools:text="bankgiro account"
+        tools:visibility="visible"
+        />
+
+</com.google.android.material.tabs.TabLayout>

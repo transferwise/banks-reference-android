@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="BanksThemeRed" parent="BanksTheme">
+        <item name="colorPrimary">#14233c</item>
+        <item name="colorPrimaryDark">#111f36</item>
+        <item name="colorOnPrimary">#ffffff</item>
+        <item name="colorOnBackground">#d3d5d8</item>
+        <item name="colorSecondary">#ff4d56</item>
+        <item name="colorOnSecondary">#ffffff</item>
+        <item name="colorSurface">#f8f8f8</item>
+    </style>
+
+    <style name="BanksThemeGreen" parent="BanksTheme">
+        <item name="colorPrimary">#ffffff</item>
+        <item name="colorPrimaryDark">#d3d5d8</item>
+        <item name="colorOnPrimary">#000</item>
+        <item name="colorOnBackground">#d3d5d8</item>
+        <item name="colorSecondary">#49ac98</item>
+        <item name="colorOnSecondary">#000</item>
+        <item name="colorSurface">#ffffff</item>
+        <item name="textInputStyle">@style/BanksInputFieldGreen</item>
+        <item name="dynamicFormText">@style/BanksInputFieldGreen</item>
+        <item name="dynamicFormSelect">@style/BanksSelectFieldGreen</item>
+        <item name="dynamicFormTab">@style/BanksTabGreen</item>
+    </style>
+
+    <style name="BanksInputFieldGreen" parent="BanksTextField">
+        <item name="boxStrokeColor">?colorSecondary</item>
+        <item name="hintTextColor">?colorSecondary</item>
+    </style>
+
+    <style name="BanksSelectFieldGreen" parent="BanksSelectField">
+        <item name="boxStrokeColor">?colorSecondary</item>
+        <item name="hintTextColor">?colorSecondary</item>
+    </style>
+
+    <style name="BanksTabGreen" parent="BanksTab">
+        <item name="tabSelectedTextColor">?colorSecondary</item>
+        <item name="tabIndicatorColor">?colorSecondary</item>
+    </style>
+
+</resources>

@@ -1,0 +1,48 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: "de.mannodermaus.android-junit5"
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
+android {
+    compileSdkVersion config.target_sdk
+    buildToolsVersion config.build_tools
+
+    defaultConfig {
+        minSdkVersion config.min_sdk
+        targetSdkVersion config.target_sdk
+    }
+
+    viewBinding {
+        enabled = true
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+dependencies {
+    implementation project(":dynamicform")
+    implementation libs.kotlin_stdlib
+    implementation libs.androidx_core
+    implementation libs.androidx_navigation_frag
+    implementation libs.androidx_navigation_ui
+    implementation libs.androidx_constraintlayout
+    implementation libs.androidx_lifecycle_extensions
+    implementation libs.androidx_recyclerview
+    implementation libs.material_components
+    implementation libs.retrofit
+    implementation libs.retrofit_moshi
+    implementation libs.okhttp
+    implementation libs.okhttp_logging
+    implementation libs.coil
+    implementation libs.coroutines
+
+    testImplementation libs.junit5_api
+    testRuntimeOnly libs.junit5_engine
+    testImplementation libs.mockito_kotlin
+    testImplementation libs.mockito_extension
+    testImplementation libs.coroutines_test
+    testImplementation libs.assertj
+}

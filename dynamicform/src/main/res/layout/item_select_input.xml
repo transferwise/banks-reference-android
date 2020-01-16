@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.textfield.TextInputLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="?dynamicFormSelect"
+    android:id="@+id/text_input_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/spacing_m"
+    android:layout_marginTop="@dimen/spacing_m"
+    android:layout_marginEnd="@dimen/spacing_m"
+    >
+
+    <AutoCompleteTextView
+        android:id="@+id/text_input_autocomplete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:editable="false"
+        tools:ignore="Deprecated"
+        />
+
+
+</com.google.android.material.textfield.TextInputLayout>

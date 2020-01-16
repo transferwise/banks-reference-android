@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.transferwise.banks.InternationalTransferActivity"
+    >
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/confirmation_title"
+        tools:viewBindingIgnore="true"
+        />
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/amount_container"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:viewBindingIgnore="true"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/source_amount"
+        style="@style/BanksTextHugeToolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_l"
+        app:layout_constraintEnd_toStartOf="@+id/target_amount"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:text="50.00"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/target_amount"
+        style="@style/BanksTextHugeToolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/source_amount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/source_amount"
+        app:layout_constraintTop_toTopOf="@+id/source_amount"
+        tools:text="55.64"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/arrow"
+        style="@style/BanksTextHugeToolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/confirmation_arrow"
+        app:layout_constraintBottom_toBottomOf="@+id/source_currency"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/source_amount"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/source_currency"
+        style="@style/BanksTextToolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/source_amount"
+        app:layout_constraintStart_toStartOf="@+id/source_amount"
+        app:layout_constraintTop_toBottomOf="@+id/source_amount"
+        tools:text="GBP"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/target_currency"
+        style="@style/BanksTextToolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/target_amount"
+        app:layout_constraintStart_toStartOf="@+id/target_amount"
+        app:layout_constraintTop_toTopOf="@+id/source_currency"
+        tools:text="EUR"
+        />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_m"
+        android:layout_marginTop="@dimen/spacing_l"
+        android:layout_marginEnd="@dimen/spacing_m"
+        android:animateLayoutChanges="true"
+        app:cardElevation="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/source_currency"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/recipient_initial"
+                style="@style/BanksAvatar"
+                android:layout_marginTop="@dimen/spacing_l"
+                tools:backgroundTint="@sample/bankssampledata.json/recipients/color"
+                tools:text="@sample/bankssampledata.json/recipients/initial"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/recipient_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_s"
+                android:textAppearance="@style/BanksTextLarge"
+                tools:text="@sample/bankssampledata.json/recipients/name"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/recipient_account"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/BanksText"
+                tools:text="@sample/bankssampledata.json/recipients/accountSummary"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/arrival_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_l"
+                android:text="@string/confirmation_arrive"
+                android:textAppearance="@style/BanksText"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/arrival_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/BanksTextLarge"
+                tools:text="5 hours"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/costs"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_l"
+                android:layout_marginBottom="@dimen/spacing_l"
+                android:gravity="center"
+                android:singleLine="false"
+                android:textAppearance="@style/BanksTextSmall"
+                tools:text="0.70 GBP TransferWise fee included with an exchange rate of 0.8743"
+                />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/reference_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_l"
+                android:text="@string/confirmation_add_reference"
+                android:textAppearance="@style/BanksTextColored"
+                />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/reference_layout"
+                style="?dynamicFormText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_l"
+                android:layout_marginEnd="@dimen/spacing_l"
+                android:layout_marginBottom="@dimen/spacing_l"
+                android:hint="@string/confirmation_reference_hint"
+                android:visibility="gone"
+                app:endIconDrawable="@drawable/payment_sent_done"
+                app:endIconMode="custom"
+                >
+
+                <com.transferwise.dynamicform.view.SingleTextWatcherEditText
+                    android:id="@+id/reference"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="textNoSuggestions"
+                    android:maxLines="1"
+                    tools:text="Pay back dinner"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_send"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/spacing_m"
+        android:text="@string/confirmation_send"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <ProgressBar
+        android:id="@+id/saving"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="6dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    tools:context="com.transferwise.banks.InternationalTransferActivity"
+    >
+
+    <ImageView
+        android:id="@+id/bank"
+        android:layout_width="88dp"
+        android:layout_height="88dp"
+        android:padding="@dimen/spacing_m"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bank_logo"
+        app:layout_constraintBottom_toTopOf="@+id/explanation"
+        app:layout_constraintEnd_toStartOf="@+id/plus"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        />
+
+    <ImageView
+        android:id="@+id/plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/account_plus"
+        android:tint="@color/secondaryTextColor"
+        app:layout_constraintBottom_toBottomOf="@+id/bank"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bank"
+        />
+
+    <ImageView
+        android:id="@+id/transferwise"
+        android:layout_width="88dp"
+        android:layout_height="88dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/transferwise_logo"
+        app:layout_constraintBottom_toBottomOf="@+id/bank"
+        app:layout_constraintStart_toEndOf="@+id/plus"
+        app:layout_constraintTop_toTopOf="@+id/bank"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/explanation"
+        style="@style/BanksTextLarge"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_xxl"
+        android:layout_marginTop="@dimen/spacing_s"
+        android:layout_marginEnd="@dimen/spacing_xxl"
+        android:gravity="center"
+        android:text="@string/create_account_explanation"
+        app:layout_constraintBottom_toTopOf="@+id/rate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bank"
+        />
+
+    <ImageView
+        android:id="@+id/rate_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_l"
+        android:src="@drawable/account_rate"
+        android:tint="?colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/rate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rate"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/rate"
+        style="@style/BanksText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_m"
+        android:layout_marginTop="@dimen/spacing_l"
+        android:text="@string/create_account_rate"
+        app:layout_constraintBottom_toTopOf="@+id/fee"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/rate_icon"
+        app:layout_constraintTop_toBottomOf="@+id/explanation"
+        />
+
+    <ImageView
+        android:id="@+id/fee_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_l"
+        android:scaleType="centerCrop"
+        android:src="@drawable/account_fee"
+        android:tint="?colorPrimary"
+        app:layout_constraintBottom_toBottomOf="@+id/fee"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/fee"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/fee"
+        style="@style/BanksText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_m"
+        android:layout_marginTop="@dimen/spacing_l"
+        android:text="@string/create_account_fee"
+        app:layout_constraintBottom_toTopOf="@+id/terms"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/fee_icon"
+        app:layout_constraintTop_toBottomOf="@+id/rate"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/terms"
+        style="@style/BanksTextSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_l"
+        android:layout_marginEnd="@dimen/spacing_l"
+        android:gravity="center"
+        android:padding="@dimen/spacing_m"
+        android:text="@string/create_account_terms"
+        app:layout_constraintBottom_toTopOf="@+id/create_account"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/create_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="200dp"
+        android:text="@string/create_account_create"
+        app:layout_constraintBottom_toTopOf="@+id/login_account"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/login_account"
+        style="@style/BanksText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/spacing_m"
+        android:background="?attr/selectableItemBackground"
+        android:padding="@dimen/spacing_m"
+        android:text="@string/create_account_login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <ProgressBar
+        android:id="@+id/creatingAccount"
+        style="@style/BanksButtonProgress"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/create_account"
+        app:layout_constraintEnd_toEndOf="@+id/create_account"
+        app:layout_constraintStart_toStartOf="@+id/create_account"
+        app:layout_constraintTop_toBottomOf="@+id/terms"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

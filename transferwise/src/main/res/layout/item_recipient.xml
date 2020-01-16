@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/list_item_height"
+    android:background="?attr/selectableItemBackground"
+    android:paddingStart="@dimen/spacing_l"
+    >
+
+    <TextView
+        android:id="@+id/initial"
+        style="@style/BanksAvatar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@sample/bankssampledata.json/recipients/initial"
+        tools:backgroundTint="@sample/bankssampledata.json/recipients/color"
+        />
+
+    <TextView
+        android:id="@+id/name"
+        style="@style/BanksText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/spacing_m"
+        android:paddingEnd="@dimen/spacing_m"
+        app:layout_constraintBottom_toTopOf="@+id/account"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/initial"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="@sample/bankssampledata.json/recipients/name"
+        />
+
+    <TextView
+        android:id="@+id/account"
+        style="@style/BanksTextSmall"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/spacing_m"
+        android:paddingEnd="@dimen/spacing_m"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/initial"
+        app:layout_constraintTop_toBottomOf="@+id/name"
+        tools:text="@sample/bankssampledata.json/recipients/accountSummary"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

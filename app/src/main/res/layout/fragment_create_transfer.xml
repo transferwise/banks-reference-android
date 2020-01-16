@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/spacing_m"
+    >
+
+    <TextView
+        style="@style/MaterialAlertDialog.MaterialComponents.Title.Text"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/spacing_m"
+        android:paddingTop="@dimen/spacing_m"
+        android:paddingEnd="@dimen/spacing_m"
+        android:text="Send money"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/national"
+        style="@style/BanksText"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="?attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:text="Domestic"
+        />
+
+    <TextView
+        android:id="@+id/international"
+        style="@style/BanksText"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="?attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:padding="@dimen/spacing_m"
+        android:text="International"
+        />
+
+</LinearLayout>

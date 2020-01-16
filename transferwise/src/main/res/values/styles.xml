@@ -1,0 +1,71 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="BanksTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="colorOnPrimary">@color/primaryTextColor</item>
+        <item name="colorOnBackground">@color/colorOnBackground</item>
+        <item name="colorSecondary">@color/primaryColor</item>
+        <item name="colorOnSecondary">@color/primaryTextColor</item>
+
+        <item name="textInputStyle">@style/BanksTextField</item>
+        <item name="dynamicFormText">@style/BanksTextField</item>
+        <item name="dynamicFormSelect">@style/BanksSelectField</item>
+        <item name="dynamicFormTab">@style/BanksTab</item>
+        <item name="toolbarStyle">@style/BanksToolbar</item>
+        <item name="materialButtonStyle">@style/BanksButton</item>
+    </style>
+
+    <style name="BanksTextField" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox" />
+
+    <style name="BanksSelectField" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu" />
+
+    <style name="BanksTab" parent="Widget.MaterialComponents.TabLayout" />
+
+    <style name="BanksToolbar" parent="Widget.MaterialComponents.Toolbar">
+        <item name="android:background">?colorPrimary</item>
+        <item name="android:elevation">4dp</item>
+        <item name="materialThemeOverlay">@style/ThemeOverlay.BanksToolbar</item>
+        <item name="titleTextColor">?colorOnPrimary</item>
+    </style>
+
+    <style name="ThemeOverlay.BanksToolbar" parent="">
+        <item name="iconTint">?colorOnBackground</item>
+    </style>
+
+    <style name="BanksToolbarButton" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:textColor">?colorOnPrimary</item>
+        <item name="android:backgroundTint">?colorPrimary</item>
+        <item name="android:elevation">4dp</item>
+    </style>
+
+    <style name="BanksButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">?colorOnSecondary</item>
+        <item name="backgroundTint">@color/button_states</item>
+    </style>
+
+    <style name="BanksToolbarProgress" parent="Widget.AppCompat.ProgressBar">
+        <item name="android:layout_width">32dp</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:indeterminateTint">?colorOnPrimary</item>
+        <item name="android:elevation">4dp</item>
+    </style>
+
+    <style name="BanksButtonProgress" parent="Widget.AppCompat.ProgressBar">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:elevation">4dp</item>
+        <item name="android:indeterminateTint">?colorOnPrimary</item>
+    </style>
+
+    <style name="BanksAvatar" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/background_circle</item>
+        <item name="android:backgroundTint">?colorPrimary</item>
+        <item name="android:textColor">?colorOnPrimary</item>
+    </style>
+
+</resources>

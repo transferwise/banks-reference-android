@@ -1,0 +1,39 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+
+buildscript {
+    apply from: "dependencies.gradle"
+
+    repositories {
+        google()
+        jcenter()
+
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:${versions.gradle_android}"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
+        classpath "de.mannodermaus.gradle.plugins:android-junit5:${versions.junit5_plugin}"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:${versions.androidx_navigation}"
+        classpath "com.diffplug.spotless:spotless-plugin-gradle:${versions.spotless}"
+    }
+}
+
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+
+    apply plugin: 'com.diffplug.gradle.spotless'
+    spotless {
+        kotlin {
+            target fileTree('.') {
+                include '**/*.kt'
+                exclude 'spotless/copyright.kt'
+            }
+            ktlint(versions.ktlint)
+            licenseHeaderFile(project.rootProject.file('spotless/copyright.kt'))
+        }
+    }
+}

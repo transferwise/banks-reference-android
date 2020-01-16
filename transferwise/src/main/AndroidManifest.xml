@@ -1,0 +1,15 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.transferwise.banks"
+    >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application android:theme="@style/BanksTheme">
+        <activity
+            android:name=".InternationalTransferActivity"
+            android:launchMode="singleTask"
+            >
+            <nav-graph android:value="@navigation/international_transfer_graph" />
+        </activity>
+    </application>
+</manifest>

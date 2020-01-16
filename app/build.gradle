@@ -1,0 +1,39 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion config.target_sdk
+    buildToolsVersion config.build_tools
+
+    defaultConfig {
+        minSdkVersion config.min_sdk
+        targetSdkVersion config.target_sdk
+        versionCode 6
+        versionName "1.0.0"
+        buildConfigField "String", "DEFAULT_SERVER_URL", "\"[YOUR_BACKEND_URL]\""
+        buildConfigField "String", "LOGIN_CLIENT_ID", "\"[YOUR_CLIENT_ID]\""
+        buildConfigField "String", "LOGIN_SERVER_URL", "\"https://sandbox.transferwise.tech/oauth/authorize/\""
+    }
+
+    viewBinding {
+        enabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+}
+
+dependencies {
+    implementation project(":transferwise")
+
+    implementation libs.kotlin_stdlib
+    implementation libs.androidx_core
+    implementation libs.androidx_constraintlayout
+    implementation libs.material_components
+    implementation libs.coroutines
+    implementation libs.androidx_lifecycle_runtime
+    implementation libs.okhttp_mockwebserver
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="error_input_tooshort">Min length is %d.</string>
+    <string name="error_input_toolong">Max length is %d.</string>
+    <string name="error_input_required">Required</string>
+    <string name="error_input_validationfailed">Please enter valid %s.</string>
+    <string name="hint_example">Example: %s</string>
+</resources>

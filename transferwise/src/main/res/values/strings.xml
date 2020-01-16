@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="check_account_progress">Fetching account information...</string>
+    <string name="check_account_failed">Failed to get your account details, please check your internet connection and try again.</string>
+    <string name="check_account_retry">Try again</string>
+
+    <string name="quote_title">Send Money</string>
+    <string name="quote_yousend">You send</string>
+    <string name="quote_recipientgets">Recipient gets</string>
+    <string name="quote_continue">continue</string>
+    <string name="quote_fee">%.2f %s fee</string>
+    <string name="quote_rate">%.4f rate</string>
+    <string name="quote_guaranteed_rate">%.4f guaranteed rate</string>
+    <string name="quote_unknown_rate">unknown rate</string>
+    <string name="quote_unknown_fee">unknown fee</string>
+    <string name="quote_arrival_time">Should arrive %s</string>
+    <string name="quote_invalid_amount">Please enter a valid amount.</string>
+
+    <string name="select_currency_title">Choose a currency</string>
+    <string name="select_currency_error">Something went wrong, please try again.</string>
+    <string name="select_currency_back">Go back</string>
+
+    <string name="create_account_explanation">We use TransferWise for faster, cheaper international payments</string>
+    <string name="create_account_rate">The real exchange rate, never any mark up</string>
+    <string name="create_account_fee">Clear, upfront fees every time you pay</string>
+    <string name="create_account_terms">By creating an account you accept the\n<a href="https://transferwise.com/terms-of-use">Terms of Service</a> and <a href="https://transferwise.com/privacy-policy">Privacy Policy</a></string>
+    <string name="create_account_create">Create a TransferWise account for me</string>
+    <string name="create_account_login">Already have TransferWise? Log In</string>
+    <string name="create_account_exists">You\'re already a member. Please login.</string>
+    <string name="create_account_failed">Failed to create account</string>
+
+    <string name="handle_login_progress">Logging in...</string>
+    <string name="handle_login_error">Something went wrong, please try again.</string>
+    <string name="handle_login_back">Go back</string>
+
+    <string name="getrecipients_title">Select a recipient</string>
+    <string name="getrecipients_add">Add</string>
+    <string name="getrecipients_failed">Failed to prepare transfer.</string>
+
+    <string name="create_recipient_title">Add a recipient</string>
+    <string name="create_recipient_save">save</string>
+    <string name="create_recipient_failed">Failed to create recipient.</string>
+
+    <string name="extra_details_title">A few more details</string>
+    <string name="extra_details_continue">continue</string>
+
+    <string name="confirmation_title">Review and send</string>
+    <string name="confirmation_send">Send</string>
+    <string name="confirmation_arrow"><![CDATA[>]]></string>
+    <string name="confirmation_arrive">Should arrive</string>
+    <string name="confirmation_fee_rate" formatted="false">%.2f %s TransferWise fee included with an exchange rate of %.4f</string>
+    <string name="confirmation_failed">Failed to create transfer.</string>
+    <string name="confirmation_add_reference">Add reference</string>
+    <string name="confirmation_edit_reference">Edit reference</string>
+    <string name="confirmation_reference_hint">Transfer reference</string>
+
+    <string name="payment_sent_summary" formatted="false">You sent %.2f %s\n to %s</string>
+    <string name="payment_sent_tapanywhere">Tap anywhere to continue</string>
+
+    <string name="error_no_network">Not connected to network, please connect and try again.</string>
+</resources>
