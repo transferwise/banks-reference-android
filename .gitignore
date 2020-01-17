@@ -1,5 +1,5 @@
 # Android Studio
-*.iml
+**.iml
 .gradle
 /local.properties
 .idea

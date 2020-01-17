@@ -6,7 +6,7 @@ This implementation is based on the following documents:
 - [Bank Integrations Design Guide](https://www.notion.so/Bank-Integrations-Design-Guide-8c375c5c5f1e4c64953b4b601ff6abc6)
 - [TransferWise for Banks API](https://transferwise.github.io/api-docs-banks/#transferwise-for-banks-api)
 
-Have a look at [Bank Integrations Reference Implementation (Backend)](https://github.com/transferwise/t4b-backend) for a reference backend implementation.
+Have a look at [Bank Integrations Reference Implementation (Backend)](https://github.com/transferwise/banks-reference-backend) for a reference backend implementation.
 
 # Overview
 The reference application consists of three main modules:
@@ -23,7 +23,7 @@ A very basic module that simulates a bank application and integrates the Transfe
 <img src="readme/main_activity_1.png" width="260">&emsp;<img src="readme/main_activity_2.png" width="260">
 
 ### Learn more
-:point_right: [Learn more about the App module](https://github.com/transferwise/banksDemo-Android/tree/master/app/README.md).
+:point_right: [Learn more about the App module](https://github.com/transferwise/banks-reference-android/tree/master/app/README.md).
 
 ## TransferWise module
 > This module can be copied to bootstrap your integration of the [TransferWise for Banks API](https://transferwise.github.io/api-docs-banks/#transferwise-for-banks-api). Note that only the full flow can easily be reused, not the different steps independently.
@@ -33,7 +33,7 @@ This module represents the reference implementation of the [TransferWise for Ban
 ![Navigation graph](readme/navigation_graph.png)
 
 ### Learn more
-:point_right: [Learn more about the TransferWise module](https://github.com/transferwise/banksDemo-Android/blob/master/transferwise/README.md) and its architectural choices.
+:point_right: [Learn more about the TransferWise module](https://github.com/transferwise/banks-reference-android/blob/master/transferwise/README.md) and its architectural choices.
 
 ## Dynamic forms module
 > This module can reused to render dynamic forms returned by the [TransferWise for Banks API](https://transferwise.github.io/api-docs-banks/#transferwise-for-banks-api). While it is fully tested and has a simple, generic API, its interface needs more polish to distribute it as a Maven artifact (e.g. thread safety, review contracts,...).
@@ -48,7 +48,7 @@ These endpoints are:
 Rendering such a dynamic UI is quite challenging and therefore, the reference implementation contains a separate module `dynamicforms` that handles all that complexity for you.
 
 ### Learn more
-:point_right: [Learn more about the Dynamic forms module](https://github.com/transferwise/banksDemo-Android/blob/master/dynamicform/README.md) and how to integrate it.
+:point_right: [Learn more about the Dynamic forms module](https://github.com/transferwise/banks-reference-android/blob/master/dynamicform/README.md) and how to integrate it.
 
 # Development setup
 The banks reference requires Android Studio version 3.6 or higher. The latest version can be downloaded from [here](https://developer.android.com/studio).
@@ -73,13 +73,11 @@ Limitations:
 - All server responses are static (e.g. entering a different quote amount won't change the receiving amount)  
 
 ### Online
-Checkout the source code and provide your own instance of `BackendConfiguration` with a:
+Checkout the source code and provide your own values of the following templated variables (found [here](https://github.com/transferwise/banks-reference-android/blob/master/app/build.gradle#L14-L16))
 
- - `url` -> where the [Bank Integrations Reference Implementation (Backend)](https://github.com/transferwise/t4b-backend) is running
- - `loginUrl` -> pointing to the production or sandbox TransferWise authorization endpoint
- - `loginClientId` -> unique Id identifying your product (contact TransferWise to acquire an Id)
-
- Then provide this configuration as a parameter to the `InternationalTransferActivity`, install the application and run it with the "Enable offline demo mode" toggle unchecked.
+ - `DEFAULT_SERVER_URL` -> where the [Bank Integrations Reference Implementation (Backend)](https://github.com/transferwise/banks-reference-backend) is running
+ - `loginUrl` -> the reference example is pointing to TransferWise's Sandbox API. Change this to our production environment before making the code available to customers.
+ - `LOGIN_CLIENT_ID` -> unique Id identifying your product (Please contact `banks@transferwise.com` to get started.)
 
 ## Code style
 This project uses [ktlint](https://github.com/pinterest/ktlint), provided via the [spotless gradle plugin](https://github.com/diffplug/spotless).
@@ -88,17 +86,18 @@ Please run `./gradlew spotlessApply` before merging pull requests to format all 
 
 # License
 ```
-Copyright 2019 TransferWise Ltd.
+Copyright 2019,2020 TransferWise Ltd.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-     http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
 ```
