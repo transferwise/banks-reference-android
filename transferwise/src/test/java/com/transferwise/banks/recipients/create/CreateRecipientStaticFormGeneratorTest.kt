@@ -23,13 +23,16 @@ import org.junit.jupiter.api.Test
 
 internal class CreateRecipientStaticFormGeneratorTest {
 
+    private val nameLabel = "Account holder's full name"
+    private val nameErrorMsg = "Please enter valid full name of the person or business you are sending to"
+
     @Nested
     inner class NameField {
         @Test
         internal fun `has title`() {
             val items = generate()
 
-            assertThat(items[0].title).isEqualTo("Name")
+            assertThat(items[0].title).isEqualTo(nameLabel)
         }
 
         @Test
@@ -85,28 +88,28 @@ internal class CreateRecipientStaticFormGeneratorTest {
         internal fun `has error when less than one character`() {
             val items = generate(userInput = mapOf(UniqueKey.create("accountHolderName") to "j"))
 
-            assertThat(items[0].error).isEqualTo("Please enter valid Name")
+            assertThat(items[0].error).isEqualTo(nameErrorMsg)
         }
 
         @Test
         internal fun `has error when less than two word`() {
             val items = generate(userInput = mapOf(UniqueKey.create("accountHolderName") to "dj"))
 
-            assertThat(items[0].error).isEqualTo("Please enter valid Name")
+            assertThat(items[0].error).isEqualTo(nameErrorMsg)
         }
 
         @Test
         internal fun `has error when first word less than one character`() {
             val items = generate(userInput = mapOf(UniqueKey.create("accountHolderName") to "j jj"))
 
-            assertThat(items[0].error).isEqualTo("Please enter valid Name")
+            assertThat(items[0].error).isEqualTo(nameErrorMsg)
         }
 
         @Test
         internal fun `has error when second word less than one character`() {
             val items = generate(userInput = mapOf(UniqueKey.create("accountHolderName") to "jj j"))
 
-            assertThat(items[0].error).isEqualTo("Please enter valid Name")
+            assertThat(items[0].error).isEqualTo(nameErrorMsg)
         }
 
         @Test
@@ -120,7 +123,7 @@ internal class CreateRecipientStaticFormGeneratorTest {
         internal fun `has error when number`() {
             val items = generate(userInput = mapOf(UniqueKey.create("accountHolderName") to "jj jj1"))
 
-            assertThat(items[0].error).isEqualTo("Please enter valid Name")
+            assertThat(items[0].error).isEqualTo(nameErrorMsg)
         }
 
         @Test

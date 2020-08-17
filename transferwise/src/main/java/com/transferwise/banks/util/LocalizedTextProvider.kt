@@ -16,6 +16,7 @@
 package com.transferwise.banks.util
 
 import android.content.res.Resources
+import com.transferwise.banks.util.isFloating
 import com.transferwise.banks.R
 
 internal open class LocalizedTextProvider(private val resources: Resources) : TextProvider {
@@ -37,7 +38,11 @@ internal open class LocalizedTextProvider(private val resources: Resources) : Te
 
     override fun quoteFee(fee: Float, currency: String) = resources.getString(R.string.quote_fee, fee, currency)
 
-    override fun quoteRate(rate: Float) = resources.getString(R.string.quote_guaranteed_rate, rate)
+    override fun quoteRate(rate: Float, rateType: String) =
+        if (rateType.isFloating())
+            resources.getString(R.string.quote_rate, rate)
+        else
+            resources.getString(R.string.quote_guaranteed_rate, rate)
 
     override fun quoteRateUnknown() = resources.getString(R.string.quote_unknown_rate)
 

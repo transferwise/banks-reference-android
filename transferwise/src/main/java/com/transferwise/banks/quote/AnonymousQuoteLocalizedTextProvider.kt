@@ -20,5 +20,5 @@ import com.transferwise.banks.R
 import com.transferwise.banks.util.LocalizedTextProvider
 
 internal class AnonymousQuoteLocalizedTextProvider(val resources: Resources) : LocalizedTextProvider(resources) {
-    override fun quoteRate(rate: Float) = resources.getString(R.string.quote_rate, rate)
+    override fun quoteRate(rate: Float, rateType: String) = resources.getString(R.string.quote_rate, rate)
 }

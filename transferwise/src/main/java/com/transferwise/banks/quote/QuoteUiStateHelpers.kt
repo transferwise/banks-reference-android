@@ -29,8 +29,10 @@ internal fun Quote.asAvailableState(textProvider: TextProvider) = QuoteUiState.A
     targetCurrency,
     targetCurrency.toCurrencyFlagUri(),
     textProvider.quoteFee(fee, sourceCurrency),
-    textProvider.quoteRate(rate),
-    textProvider.quoteArrivalTime(formattedEstimatedDelivery)
+    textProvider.quoteRate(rate, rateType),
+    textProvider.quoteArrivalTime(formattedEstimatedDelivery),
+    rateType,
+    notices.joinToString { n -> n.text }
 )
 
 internal fun QuoteDescription.asInvalidAmountState(textProvider: TextProvider) = QuoteUiState.Failed(
@@ -42,6 +44,8 @@ internal fun QuoteDescription.asInvalidAmountState(textProvider: TextProvider) =
     targetCurrency.toCurrencyFlagUri(),
     textProvider.quoteFeeUnknown(),
     textProvider.quoteRateUnknown(),
+    "",
+    "",
     "",
     textProvider.quoteInvalidAmount()
 )
@@ -56,6 +60,8 @@ internal fun QuoteDescription.asErrorState(error: String, textProvider: TextProv
     textProvider.quoteFeeUnknown(),
     textProvider.quoteRateUnknown(),
     "",
+    "",
+    "",
     error
 )
 
@@ -68,5 +74,7 @@ internal fun QuoteDescription.asFetchingState(textProvider: TextProvider) = Quot
     targetCurrency.toCurrencyFlagUri(),
     textProvider.quoteFeeUnknown(),
     textProvider.quoteRateUnknown(),
+    "",
+    "",
     ""
 )

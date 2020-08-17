@@ -21,6 +21,7 @@ import com.nhaarman.mockitokotlin2.eq
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.whenever
+import com.transferwise.banks.api.data.Notice
 import com.transferwise.banks.api.data.Quote
 import com.transferwise.banks.quote.QuoteUiState.Available
 import com.transferwise.banks.quote.QuoteUiState.Failed
@@ -302,6 +303,17 @@ class QuoteViewModelTest {
             viewModel.doOnNewQuote(100f)
 
             assertThat(viewModel.lastState<Available>().arrivalTime).isEqualTo("Should arrive by November 4th")
+        }
+
+        @Test
+        internal fun `shows notice message when rateType is FLOATING`() = runBlockingTest {
+            whenever(webService.getQuote(any(), any())).thenReturn(
+                testQuote(rateType = "FLOATING", notices = listOf(Notice("warning message", "", ""))))
+            val viewModel = viewModel(webService)
+
+            viewModel.doOnNewQuote(100f)
+
+            assertThat(viewModel.lastState<Available>().notice).isEqualTo("warning message")
         }
 
         @Test
@@ -687,5 +699,7 @@ private fun testQuote(
     rate: Float = 0f,
     arrivalTime: String = "",
     fee: Float = 0f,
-    targetAmount: Float = 0f
-) = Response.success(Quote(id, sourceCurrency, targetCurrency, sourceAmount, targetAmount, rate, fee, arrivalTime))
+    targetAmount: Float = 0f,
+    rateType: String = "FIXED",
+    notices: List<Notice> = emptyList()
+) = Response.success(Quote(id, sourceCurrency, targetCurrency, sourceAmount, targetAmount, rate, fee, arrivalTime, rateType, notices))

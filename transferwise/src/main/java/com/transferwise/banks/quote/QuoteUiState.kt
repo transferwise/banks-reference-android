@@ -25,6 +25,8 @@ internal sealed class QuoteUiState {
     abstract val fee: String
     abstract val rate: String
     abstract val arrivalTime: String
+    abstract val rateType: String
+    abstract val notice: String
 
     data class Fetching(
         override val sourceAmount: String,
@@ -35,7 +37,9 @@ internal sealed class QuoteUiState {
         override val targetFlagUri: String,
         override val fee: String,
         override val rate: String,
-        override val arrivalTime: String
+        override val arrivalTime: String,
+        override val rateType: String,
+        override val notice: String
     ) : QuoteUiState()
 
     data class Available(
@@ -47,7 +51,9 @@ internal sealed class QuoteUiState {
         override val targetFlagUri: String,
         override val fee: String,
         override val rate: String,
-        override val arrivalTime: String
+        override val arrivalTime: String,
+        override val rateType: String,
+        override val notice: String
     ) : QuoteUiState()
 
     data class Failed(
@@ -60,6 +66,8 @@ internal sealed class QuoteUiState {
         override val fee: String,
         override val rate: String,
         override val arrivalTime: String,
+        override val rateType: String,
+        override val notice: String,
         val errorMessage: String
     ) : QuoteUiState()
 }

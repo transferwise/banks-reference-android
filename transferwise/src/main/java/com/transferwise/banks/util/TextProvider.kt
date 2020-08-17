@@ -23,7 +23,7 @@ internal interface TextProvider {
     fun transferCosts(fee: Float, currency: String, rate: Float): String
     fun paymentSummary(amount: Float, currency: String, receiver: String): String
     fun quoteFee(fee: Float, currency: String): String
-    fun quoteRate(rate: Float): String
+    fun quoteRate(rate: Float, rateType: String): String
     fun quoteRateUnknown(): String
     fun quoteFeeUnknown(): String
     fun quoteArrivalTime(arrivalTime: String): String

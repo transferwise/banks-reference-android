@@ -42,7 +42,7 @@ internal class CreateRecipientStaticFormGenerator(private val errorProvider: Tex
     private fun getError(previousInput: String?, serverErrors: Map<UniqueKey, String>, forceRequired: Boolean) = when {
         previousInput == null -> if (forceRequired) errorProvider.requiredError() else ""
         previousInput.isEmpty() -> errorProvider.requiredError()
-        previousInput.notMatches(NAME_VALIDATION) -> errorProvider.validationFailedError(NAME_TITLE)
+        previousInput.notMatches(NAME_VALIDATION) -> errorProvider.validationFailedError(NAME_ERROR_MESSAGE)
         serverErrors[NAME_KEY] != null -> serverErrors[NAME_KEY]!!
         else -> ""
     }
@@ -51,7 +51,8 @@ internal class CreateRecipientStaticFormGenerator(private val errorProvider: Tex
 
     companion object {
         val NAME_KEY = UniqueKey("accountHolderName")
-        private const val NAME_TITLE = "Name"
+        private const val NAME_TITLE = "Account holder's full name"
         private const val NAME_VALIDATION = "^([a-zA-Z]{2,}[ ]{0,}){2,}\$"
+        private const val NAME_ERROR_MESSAGE = "full name of the person or business you are sending to"
     }
 }
