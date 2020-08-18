@@ -21,3 +21,5 @@ internal fun Float.decimalsOrRound(digits: Int) =
     if (isDecimalNumber()) String.format("%.${digits}f", this) else String.format("%.0f", this)
 
 private fun Float.isDecimalNumber() = this % 1 > 0.0001
+
+internal fun String.isFloating() = this == "FLOATING"

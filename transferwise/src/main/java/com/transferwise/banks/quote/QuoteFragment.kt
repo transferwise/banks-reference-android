@@ -24,6 +24,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -34,6 +35,7 @@ import com.transferwise.banks.databinding.FragmentQuoteBinding
 import com.transferwise.banks.quote.QuoteUiState.Available
 import com.transferwise.banks.quote.QuoteUiState.Failed
 import com.transferwise.banks.quote.QuoteUiState.Fetching
+import com.transferwise.banks.util.isFloating
 import com.transferwise.banks.util.limitDecimalsTo
 import com.transferwise.banks.util.sharedViewModel
 import com.transferwise.banks.util.toast
@@ -99,6 +101,12 @@ internal open class QuoteFragment : Fragment() {
         binding.fee.text = state.fee
         binding.rate.text = state.rate
         binding.arrivalTime.text = if (state.arrivalTime.isNotEmpty()) state.arrivalTime.boldTimeHighlight() else ""
+
+        if(state.rateType.isFloating()) {
+            binding.notice.text = state.notice
+            binding.notice.isVisible = true
+            binding.noticeBackground.isVisible = true
+        }
     }
 
     private fun String.boldTimeHighlight(): SpannableStringBuilder {

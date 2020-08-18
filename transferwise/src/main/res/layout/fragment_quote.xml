@@ -261,6 +261,31 @@
         tools:text="Should arrive in 5 hours"
         />
 
+    <View
+        android:id="@+id/notice_background"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="@dimen/spacing_l"
+        android:background="#FAEE8A"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/target_background"
+        app:layout_constraintTop_toBottomOf="@+id/target_background"
+        />
+
+    <TextView
+        android:id="@+id/notice"
+        style="@style/Widget.AppCompat.TextView"
+        android:layout_width="318dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/notice_background"
+        app:layout_constraintTop_toTopOf="@+id/notice_background"
+        />
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_continue"
         android:layout_width="0dp"

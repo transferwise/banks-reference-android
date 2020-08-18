@@ -23,5 +23,13 @@ internal data class Quote(
     val targetAmount: Float,
     val rate: Float,
     val fee: Float,
-    val formattedEstimatedDelivery: String
+    val formattedEstimatedDelivery: String,
+    val rateType: String,
+    val notices: List<Notice>
+)
+
+internal data class Notice(
+    val text: String,
+    val link: String?,
+    val type: String
 )
