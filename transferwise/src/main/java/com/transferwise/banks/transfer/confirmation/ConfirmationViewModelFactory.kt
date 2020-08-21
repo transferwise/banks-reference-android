@@ -31,6 +31,7 @@ internal class ConfirmationViewModelFactory(
     private val resources: Resources
 ) : ViewModelProvider.Factory {
 
+    @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(ConfirmationViewModel::class.java)) {
             return ConfirmationViewModel(

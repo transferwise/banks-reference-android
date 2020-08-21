@@ -25,6 +25,8 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
 import com.transferwise.banks.databinding.FragmentExtraDetailsBinding
 import com.transferwise.banks.util.sharedViewModel
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.ObsoleteCoroutinesApi
 
 /**
  * Note: this screen will be skipped, when there are no mandatory extra details.
@@ -33,6 +35,8 @@ import com.transferwise.banks.util.sharedViewModel
  * Please refer to the design guide for more information about each screen:
  * https://www.notion.so/Bank-Integrations-Design-Guide-8c375c5c5f1e4c64953b4b601ff6abc6
  */
+@ExperimentalCoroutinesApi
+@ObsoleteCoroutinesApi
 internal class ExtraDetailsFragment : Fragment() {
 
     private lateinit var binding: FragmentExtraDetailsBinding

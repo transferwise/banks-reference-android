@@ -29,6 +29,7 @@ internal class AccountViewModelFactory(
     private val code: String = ""
 ) : ViewModelProvider.Factory {
 
+    @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(ConnectAccountViewModel::class.java)) {
             return ConnectAccountViewModel(webService, sharedViewModel, customerId, quote, loginUrl, loginClientId) as T

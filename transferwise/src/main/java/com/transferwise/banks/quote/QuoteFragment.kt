@@ -132,7 +132,7 @@ private fun SingleTextWatcherEditText.setTextSafe(text: String) {
     } else if (this.text.isNullOrEmpty()) {
         // Required for when navigating back to screen from recipients and FixedTarget quote, then the source amount has focus
         this.setTextWithNoTextChangeCallback(text)
-    } else if (!text.isNullOrEmpty()) {
+    } else if (text.isNotEmpty()) {
         this.doAfterFocusChange { this.setTextWithNoTextChangeCallback(text) }
     }
 }

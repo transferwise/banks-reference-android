@@ -19,8 +19,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.transferwise.banks.BackendConfiguration
 
-internal class SharedViewModelFactory(val backendConfiguration: BackendConfiguration) : ViewModelProvider.Factory {
+internal class SharedViewModelFactory(private val backendConfiguration: BackendConfiguration) : ViewModelProvider.Factory {
 
+    @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(SharedViewModel::class.java)) {
             return SharedViewModel(backendConfiguration) as T

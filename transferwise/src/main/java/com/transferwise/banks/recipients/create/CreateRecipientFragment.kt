@@ -31,11 +31,15 @@ import com.transferwise.banks.recipients.create.CreateRecipientUiState.Idle
 import com.transferwise.banks.recipients.create.CreateRecipientUiState.Saving
 import com.transferwise.banks.util.sharedViewModel
 import com.transferwise.banks.util.toast
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.ObsoleteCoroutinesApi
 
 /**
  * Please refer to the design guide for more information about each screen:
  * https://www.notion.so/Bank-Integrations-Design-Guide-8c375c5c5f1e4c64953b4b601ff6abc6
  */
+@ExperimentalCoroutinesApi
+@ObsoleteCoroutinesApi
 internal class CreateRecipientFragment : Fragment() {
 
     private lateinit var binding: FragmentCreateRecipientBinding

@@ -39,14 +39,13 @@ internal class ConfirmationViewModel(
     private val sharedViewModel: SharedViewModel,
     private val customerId: Int,
     private val summary: TransferSummary,
-    details: TransferDetails,
+    private var details: TransferDetails,
     private val textProvider: TextProvider,
     private val helper: RecipientHelper = DefaultRecipientHelper()
 ) : ViewModel() {
 
     val uiState = MutableLiveData<ConfirmationUiState>()
     private val formattedSummary: FormattedSummary
-    private var details = details
 
     init {
         formattedSummary = summary.toFormattedSummary()
@@ -107,5 +106,5 @@ internal class ConfirmationViewModel(
     private val referenceRegex get() = summary.transferReferenceValidation.validationRegexp ?: ""
 
     private fun String.isValidReference() =
-        referenceRegex.isNullOrEmpty() || this.matches(referenceRegex.toRegex())
+        referenceRegex.isEmpty() || this.matches(referenceRegex.toRegex())
 }

@@ -28,6 +28,8 @@ internal class PaymentSentViewModelFactory(
     private val currency: String,
     private val recipient: String
 ) : ViewModelProvider.Factory {
+
+    @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(PaymentSentViewModel::class.java)) {
             return PaymentSentViewModel(sharedViewModel, amount, currency, recipient, LocalizedTextProvider(resources)) as T

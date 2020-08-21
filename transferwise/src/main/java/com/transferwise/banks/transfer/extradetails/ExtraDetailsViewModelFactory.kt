@@ -20,7 +20,11 @@ import androidx.lifecycle.ViewModelProvider
 import com.transferwise.banks.api.data.TransferSummary
 import com.transferwise.banks.shared.SharedViewModel
 import com.transferwise.dynamicform.DynamicFormController
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.ObsoleteCoroutinesApi
 
+@ObsoleteCoroutinesApi
+@ExperimentalCoroutinesApi
 internal class ExtraDetailsViewModelFactory(
     private val webService: ExtraDetailsWebService,
     private val sharedViewModel: SharedViewModel,
@@ -29,6 +33,7 @@ internal class ExtraDetailsViewModelFactory(
     private val transferSummary: TransferSummary
 ) : ViewModelProvider.Factory {
 
+    @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(ExtraDetailsViewModel::class.java)) {
             return ExtraDetailsViewModel(webService, sharedViewModel, dynamicFormController, customerId, transferSummary) as T

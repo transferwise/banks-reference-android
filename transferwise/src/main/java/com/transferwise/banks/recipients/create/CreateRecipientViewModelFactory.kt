@@ -21,7 +21,11 @@ import androidx.lifecycle.ViewModelProvider
 import com.transferwise.banks.shared.SharedViewModel
 import com.transferwise.banks.util.LocalizedTextProvider
 import com.transferwise.dynamicform.DynamicFormController
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.ObsoleteCoroutinesApi
 
+@ObsoleteCoroutinesApi
+@ExperimentalCoroutinesApi
 internal class CreateRecipientViewModelFactory(
     private val sharedViewModel: SharedViewModel,
     private val dynamicFormController: DynamicFormController,
@@ -31,6 +35,7 @@ internal class CreateRecipientViewModelFactory(
     private val targetCurrency: String
 ) : ViewModelProvider.Factory {
 
+    @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(CreateRecipientViewModel::class.java)) {
             return CreateRecipientViewModel(

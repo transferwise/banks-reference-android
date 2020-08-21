@@ -26,6 +26,7 @@ internal class GetRecipientsViewModelFactory(
     private val targetCurrency: String
 ) : ViewModelProvider.Factory {
 
+    @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(GetRecipientsViewModel::class.java)) {
             return GetRecipientsViewModel(sharedViewModel.webService, sharedViewModel, customerId, quoteId, targetCurrency) as T

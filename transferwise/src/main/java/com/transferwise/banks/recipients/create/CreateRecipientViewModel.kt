@@ -27,9 +27,11 @@ import com.transferwise.dynamicform.DynamicFormState
 import com.transferwise.dynamicform.DynamicFormState.Complete
 import com.transferwise.dynamicform.DynamicFormState.Loading
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.ObsoleteCoroutinesApi
 import kotlinx.coroutines.channels.consumeEach
 import kotlinx.coroutines.launch
 
+@ObsoleteCoroutinesApi
 @ExperimentalCoroutinesApi
 internal class CreateRecipientViewModel(
     private val webservice: BanksWebService,

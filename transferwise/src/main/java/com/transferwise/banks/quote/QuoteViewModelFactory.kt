@@ -35,6 +35,7 @@ internal class QuoteViewModelFactory(
     private val anonymous: Boolean
 ) : ViewModelProvider.Factory {
 
+    @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(QuoteViewModel::class.java)) {
             return QuoteViewModel(
@@ -57,8 +58,8 @@ internal class QuoteViewModelFactory(
         throw RuntimeException("Can't create ViewModel - Unsupported Viewmodel class")
     }
 
-    fun createTextProvider() = if (anonymous) AnonymousQuoteLocalizedTextProvider(resources) else LocalizedTextProvider(resources)
-    fun createNavigationFactory() = if (anonymous) AnonymousQuoteNavigationFactory() else DefaultQuoteNavigationFactory()
-    fun createQuoteWebService() =
+    private fun createTextProvider() = if (anonymous) AnonymousQuoteLocalizedTextProvider(resources) else LocalizedTextProvider(resources)
+    private fun createNavigationFactory() = if (anonymous) AnonymousQuoteNavigationFactory() else DefaultQuoteNavigationFactory()
+    private fun createQuoteWebService() =
         if (anonymous) AnonymousQuoteWebService(sharedViewModel.webService) else DefaultQuoteWebService(sharedViewModel.webService)
 }
