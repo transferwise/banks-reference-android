@@ -1,6 +1,5 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion config.target_sdk
@@ -16,8 +15,12 @@ android {
         buildConfigField "String", "LOGIN_SERVER_URL", "\"https://sandbox.transferwise.tech/oauth/authorize/\""
     }
 
-    viewBinding {
-        enabled = true
+    buildFeatures {
+        viewBinding true
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
     }
 
     compileOptions {

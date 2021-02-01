@@ -131,9 +131,9 @@ class InternationalTransferActivity : AppCompatActivity() {
      */
     private fun storeQuoteForHandleLoginDeepLink(it: ToLogin) = intent.putExtra(QUOTE_DESCRIPTION, it.quote)
 
-    private val backendConfiguration get() = intent.getParcelableExtra<BackendConfiguration>(BACKEND_CONFIGURATION)
+    private val backendConfiguration get() = intent.getParcelableExtra<BackendConfiguration>(BACKEND_CONFIGURATION)!!
     private val customerId get() = intent.getIntExtra(CUSTOMER_ID, -1)
-    private val quote get() = intent.getParcelableExtra<QuoteDescription>(QUOTE_DESCRIPTION)
+    private val quote get() = intent.getParcelableExtra<QuoteDescription>(QUOTE_DESCRIPTION)!!
     private val theme: Int get() = intent.getIntExtra(THEME, R.style.BanksTheme)
 
     companion object {
