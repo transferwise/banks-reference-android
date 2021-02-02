@@ -29,7 +29,9 @@ internal const val FAKE_QUOTE = """
                 "targetAmount": 118.73,
                 "rate": 1.19487,
                 "fee": 0.63,
-                "formattedEstimatedDelivery": "by December 16th"
+                "formattedEstimatedDelivery": "by December 16th",
+                "rateType": "FIXED",
+                "notices": []
             }
         """
 
@@ -54,7 +56,9 @@ internal const val FAKE_ANONYMOUS_QUOTE = """
                 "targetAmount": 1190.15,
                 "rate": 1.19487,
                 "fee": 3.95,
-                "formattedEstimatedDelivery": "by December 16th"
+                "formattedEstimatedDelivery": "by December 16th",
+                "rateType": "FIXED",
+                "notices": []
             }
         """
 
