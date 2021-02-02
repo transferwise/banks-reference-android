@@ -34,7 +34,7 @@ internal class FakeTextProvider : TextProvider {
 
     override fun quoteFee(fee: Float, currency: String) = "$fee $currency fee"
 
-    override fun quoteRate(rate: Float) = "$rate guaranteed rate"
+    override fun quoteRate(rate: Float, rateType: String) = "$rate guaranteed rate"
 
     override fun quoteRateUnknown() = "unknown rate"
 
